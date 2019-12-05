@@ -1,0 +1,63 @@
+{
+  "name": "blank",
+  "version": "0.0.1",
+  "license": "MIT",
+  "keywords": [
+    "reshuffle",
+    "react",
+    "blank",
+    "start",
+    "fullstack"
+  ],
+  "dependencies": {
+    "@reshuffle/code-transform": "0.1.0",
+    "@reshuffle/db": "^0.5.5",
+    "@reshuffle/fetch-runtime": "0.1.0",
+    "@reshuffle/local-proxy": "^0.3.1",
+    "@reshuffle/passport": "^0.2.0",
+    "@reshuffle/react-auth": "^0.1.7",
+    "@reshuffle/server-function": "0.2.2",
+    "bootstrap": "^4.4.0",
+    "react": "^16.12.0",
+    "react-bootstrap": "^1.0.0-beta.12",
+    "react-dom": "^16.12.0",
+    "react-scripts": "^3.2.0"
+  },
+  "scripts": {
+    "start": "cross-env EXTEND_ESLINT=true react-scripts start",
+    "build": "cross-env EXTEND_ESLINT=true react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "lint": "eslint backend --fix && eslint src --fix"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "devDependencies": {
+    "cross-env": "^6.0.3",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.19.1",
+    "stylelint": "^12.0.0",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard"
+  },
+  "prettier": {
+    "trailingComma": "all",
+    "singleQuote": true,
+    "jsxSingleQuote": true
+  }
+}
