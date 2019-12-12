@@ -10,18 +10,25 @@
     "fullstack"
   ],
   "dependencies": {
-    "@reshuffle/code-transform": "0.1.0",
+    "@reshuffle/code-transform": "^0.1.0",
     "@reshuffle/db": "^0.5.5",
-    "@reshuffle/fetch-runtime": "0.1.0",
-    "@reshuffle/local-proxy": "^0.3.1",
+    "@reshuffle/db-admin": "0.0.10",
+    "@reshuffle/fetch-runtime": "^0.1.0",
+    "@reshuffle/local-proxy": "^0.3.4",
     "@reshuffle/passport": "^0.2.0",
     "@reshuffle/react-auth": "^0.1.7",
-    "@reshuffle/server-function": "0.2.2",
+    "@reshuffle/server-function": "^0.2.2",
     "bootstrap": "^4.4.0",
+    "grapesjs": "^0.15.9",
+    "grapesjs-mjml": "^0.1.15",
+    "grapesjs-react": "^2.0.2",
+    "moment": "^2.24.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.12.0",
-    "react-scripts": "^3.2.0"
+    "react-google-login": "^5.0.7",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "start": "cross-env EXTEND_ESLINT=true react-scripts start",
