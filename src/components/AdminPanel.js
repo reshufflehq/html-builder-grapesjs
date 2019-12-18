@@ -1,6 +1,5 @@
 import '@reshuffle/code-transform/macro';
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
