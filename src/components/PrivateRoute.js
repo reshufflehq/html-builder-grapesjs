@@ -10,35 +10,32 @@ const PrivateRoute = ({
   component: Component,
   authenticated,
   profile,
+  loading,
+  getLoginURL,
   ...rest
 }) => {
   return (
-    <>
-      <LoginNav />
-      <Route
-        {...rest}
-        render={routeProps => {
-          if (authenticated) {
-            return (
-              <Component
-                authenticated={authenticated}
-                profile={profile}
-                {...routeProps}
-                {...props}
-              />
-            );
-          } else {
-            return (
-              <div className='jumbotron' style={{ textAlign: 'center' }}>
-                <h1 className='display-4'>
-                  Please login to access for edit the site
-                </h1>
-              </div>
-            );
-          }
-        }}
-      />
-    </>
+    <Route {...rest} render={routeProps => {
+      if (authenticated === undefined) {
+        return null;
+      }
+      if (authenticated) {
+        return (
+          <>
+            <LoginNav />
+            <Component
+              authenticated={authenticated}
+              profile={profile}
+              {...routeProps}
+              {...props}
+            />
+          </>
+        );
+      } else {
+        window.location = getLoginURL();
+      }
+      }}
+  />
   );
 };
 

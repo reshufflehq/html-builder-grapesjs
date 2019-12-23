@@ -8,7 +8,7 @@ import AdminPanel from './components/AdminPanel';
 import PrivateRoute from './components/PrivateRoute';
 
 export default function App() {
-  const { loading, error, authenticated, profile } = useAuth();
+  const { loading, error, authenticated, profile, getLoginURL } = useAuth();
 
   if (loading) {
     return <div>loading...</div>;
@@ -23,22 +23,14 @@ export default function App() {
   const childProps = {
     authenticated,
     profile,
+    loading,
+    getLoginURL,
   };
 
   return (
     <Switch>
-      <Route
-        path='/dashboard'
-        render={props => (
-          <PrivateRoute component={AdminPanel} {...childProps} {...props} />
-        )}
-      />
-      <Route
-        path='/editor'
-        render={props => (
-          <PrivateRoute component={HtmlEditor} {...childProps} {...props} />
-        )}
-      />
+      <PrivateRoute path='/dashboard' component={AdminPanel} {...childProps} />
+      <PrivateRoute path='/editor' component={HtmlEditor} {...childProps} />
       <Route path='/' exact component={HomePage} />
     </Switch>
   );
