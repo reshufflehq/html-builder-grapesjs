@@ -23,8 +23,8 @@ export default function AdminPanel({ history }) {
   };
 
   const actionButtonStyle = {
-    height: '150px',
-    width: '150px',
+    height: '10rem',
+    width: '10rem',
   };
 
   return (
