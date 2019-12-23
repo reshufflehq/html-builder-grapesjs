@@ -56,6 +56,3 @@ export async function storeEditor(data) {
 export async function loadEditor() {
   await get(editorPrefix);
 }
-
-
-

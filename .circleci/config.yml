@@ -41,6 +41,14 @@ jobs:
       - run:
           name: Run lint
           command: npm run lint
+  check-prettier:
+    <<: *defaults
+    steps:
+      - checkout
+      - <<: *attach_workspace
+      - run:
+          name: Check prettier
+          command: npm run check-prettier
   unit-test:
     <<: *defaults
     steps:
@@ -55,6 +63,9 @@ workflows:
     jobs:
       - build
       - lint:
+          requires:
+            - build
+      - check-prettier:
           requires:
             - build
       - unit-test:
