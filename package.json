@@ -62,7 +62,7 @@
     "extends": "stylelint-config-standard"
   },
   "prettier": {
-    "trailingComma": "all",
+    "trailingComma": "es5",
     "singleQuote": true,
     "jsxSingleQuote": true
   }

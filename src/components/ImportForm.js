@@ -31,7 +31,7 @@ export default function ImportForm({ onSaveDone }) {
           ...form,
           [el.name]: el.value,
         }),
-        {},
+        {}
       );
     return data;
   };
@@ -50,7 +50,7 @@ export default function ImportForm({ onSaveDone }) {
       await saveHtmlFields(req);
     } catch (error) {
       console.error(
-        `An error at ImportForm on saveHtmlFields, details: ${error}`,
+        `An error at ImportForm on saveHtmlFields, details: ${error}`
       );
     }
     onSaveDone();
