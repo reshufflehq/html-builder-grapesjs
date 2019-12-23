@@ -15,13 +15,11 @@ app.all('/store', express.json(), async function(req, res) {
   await update(editorPrefix, editor => {
     return editorData;
   });
-  res.setHeader('Content-Type', 'application/json');
   res.sendStatus(200);
 });
 
 app.all('/load', async function(req, res) {
   const result = await get(editorPrefix);
-  res.setHeader('Content-Type', 'application/json');
   res.json(result);
 });
 
