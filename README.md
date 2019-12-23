@@ -1,13 +1,13 @@
-[![CircleCI](https://circleci.com/gh/reshufflehq/blank.svg?style=svg)](https://circleci.com/gh/reshufflehq/blank)
+[![CircleCI](https://circleci.com/gh/reshufflehq/html-builder-grapesjs.svg?style=svg)](https://circleci.com/gh/reshufflehq/html-builder-grapesjs)
 
 This is a [Reshuffle](https://reshuffle.com/) template.
 
 ## About
 
-A starting point for creating your app with Reshuffle.
+Build HTML templates without any coding knowledge! This project is using the Reshuffle framework and the GrapesJS library.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Navigate to `/editor` in the url path (example: localhost:3000/editor) to edit the website.
 
 ## Screenshots
 
-<img src="./app-screen.png" width="50%" height="50%">
+<img src="./app-screen.png">
