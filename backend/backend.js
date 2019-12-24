@@ -1,4 +1,5 @@
 import { get, update } from '@reshuffle/db';
+import { initialData } from './constants';
 const editorPrefix = 'editor';
 
 /**
@@ -7,7 +8,7 @@ const editorPrefix = 'editor';
 /* @expose */
 export async function getHtmlFields() {
   try {
-    const { html, css, js } = await get(editorPrefix);
+    const { html, css, js } = (await get(editorPrefix)) || initialData;
     return { html: html, css: css, js: js };
   } catch (err) {
     console.log('error on getHtmlFields backend', err);
