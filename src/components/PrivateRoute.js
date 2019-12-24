@@ -15,27 +15,29 @@ const PrivateRoute = ({
   ...rest
 }) => {
   return (
-    <Route {...rest} render={routeProps => {
-      if (authenticated === undefined) {
-        return null;
-      }
-      if (authenticated) {
-        return (
-          <>
-            <LoginNav />
-            <Component
-              authenticated={authenticated}
-              profile={profile}
-              {...routeProps}
-              {...props}
-            />
-          </>
-        );
-      } else {
-        window.location = getLoginURL();
-      }
+    <Route
+      {...rest}
+      render={routeProps => {
+        if (authenticated === undefined) {
+          return null;
+        }
+        if (authenticated) {
+          return (
+            <>
+              <LoginNav />
+              <Component
+                authenticated={authenticated}
+                profile={profile}
+                {...routeProps}
+                {...props}
+              />
+            </>
+          );
+        } else {
+          window.location = getLoginURL();
+        }
       }}
-  />
+    />
   );
 };
 
