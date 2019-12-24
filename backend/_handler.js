@@ -2,6 +2,7 @@ import express from 'express';
 import { get, update } from '@reshuffle/db';
 import { defaultHandler } from '@reshuffle/server-function';
 import { authHandler } from '@reshuffle/passport';
+import { initialData } from './constants';
 
 const app = express();
 const devDBAdmin = require('@reshuffle/db-admin');
@@ -19,7 +20,7 @@ app.all('/store', express.json(), async function(req, res) {
 });
 
 app.all('/load', async function(req, res) {
-  const result = await get(editorPrefix);
+  const result = (await get(editorPrefix)) || initialData;
   res.json(result);
 });
 
