@@ -10,25 +10,31 @@
     "fullstack"
   ],
   "dependencies": {
-    "@reshuffle/code-transform": "0.1.0",
+    "@reshuffle/code-transform": "^0.1.0",
     "@reshuffle/db": "^0.5.5",
-    "@reshuffle/fetch-runtime": "0.1.0",
-    "@reshuffle/local-proxy": "^0.3.1",
+    "@reshuffle/db-admin": "0.0.10",
+    "@reshuffle/fetch-runtime": "^0.1.0",
+    "@reshuffle/local-proxy": "^0.3.4",
     "@reshuffle/passport": "^0.2.0",
     "@reshuffle/react-auth": "^0.1.7",
-    "@reshuffle/server-function": "0.2.2",
-    "bootstrap": "^4.4.0",
+    "@reshuffle/server-function": "^0.2.2",
+    "bootstrap": "^4.4.1",
+    "grapesjs": "^0.15.9",
+    "grapesjs-react": "^2.0.2",
+    "moment": "^2.24.0",
     "react": "^16.12.0",
     "react-bootstrap": "^1.0.0-beta.12",
     "react-dom": "^16.12.0",
-    "react-scripts": "^3.2.0"
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.0"
   },
   "scripts": {
     "start": "cross-env EXTEND_ESLINT=true react-scripts start",
     "build": "cross-env EXTEND_ESLINT=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint backend --fix && eslint src --fix"
+    "lint": "eslint backend --fix && eslint src --fix",
+    "check-prettier": "prettier --ignore-path .gitignore -c '**/*.js'"
   },
   "browserslist": {
     "production": [
@@ -47,7 +53,7 @@
   },
   "devDependencies": {
     "cross-env": "^6.0.3",
-    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-prettier": "^3.1.2",
     "prettier": "^1.19.1",
     "stylelint": "^12.0.0",
     "stylelint-config-standard": "^19.0.0"
@@ -56,7 +62,7 @@
     "extends": "stylelint-config-standard"
   },
   "prettier": {
-    "trailingComma": "all",
+    "trailingComma": "es5",
     "singleQuote": true,
     "jsxSingleQuote": true
   }

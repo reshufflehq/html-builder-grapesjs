@@ -1,33 +1,37 @@
+import '@reshuffle/code-transform/macro';
 import React from 'react';
-import logo from './assets/logo.svg';
-import reshuffle from './assets/reshuffle.png';
-import plus from './assets/plus.png';
-import './App.css';
+import { BrowserRouter as Switch, Route } from 'react-router-dom';
+import { useAuth } from '@reshuffle/react-auth';
+import HomePage from './components/HomePage';
+import HtmlEditor from './components/HtmlEditor';
+import AdminPanel from './components/AdminPanel';
+import PrivateRoute from './components/PrivateRoute';
 
-function App() {
-  return (
-    <div className="App">
-      <div className="App-header">
-      <div className="logos">
-        <img src={logo} className="App-logo logo" alt="logo" />
-        <img src={plus} className="logo-plus" alt="logo"/>
-        <img src={reshuffle} className="logo-re" alt="logo" />
-        </div>
-        {/* <div className="App-section"> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload. <br/>
-          Edit backend/backend.js to develop your backend code.
-        </p>
-        <a
-          className="App-link"
-          href="https://reshuffle.com"
-          target="blank"
-        >
-          Learn Reshuffle
-        </a>
+export default function App() {
+  const { loading, error, authenticated, profile, getLoginURL } = useAuth();
+
+  if (loading) {
+    return <div>loading...</div>;
+  }
+  if (error) {
+    return (
+      <div>
+        <h1>{error.toString()}</h1>
       </div>
-    </div>
+    );
+  }
+  const childProps = {
+    authenticated,
+    profile,
+    loading,
+    getLoginURL,
+  };
+
+  return (
+    <Switch>
+      <PrivateRoute path='/dashboard' component={AdminPanel} {...childProps} />
+      <PrivateRoute path='/editor' component={HtmlEditor} {...childProps} />
+      <Route path='/' exact component={HomePage} />
+    </Switch>
   );
 }
-
-export default App;
