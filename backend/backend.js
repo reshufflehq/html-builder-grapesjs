@@ -1,6 +1,6 @@
 import { get, update } from '@reshuffle/db';
 import { initialData } from './constants';
-const editorPrefix = 'editor';
+export const editorPrefix = 'editor';
 
 /**
  * Get html, css, js fields from data that was sent from GrapesJs
