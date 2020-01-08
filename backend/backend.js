@@ -1,5 +1,6 @@
 import { get, update } from '@reshuffle/db';
-const editorPrefix = 'editor';
+import { initialData } from './constants';
+export const editorPrefix = 'editor';
 
 /**
  * Get html, css, js fields from data that was sent from GrapesJs
@@ -7,7 +8,7 @@ const editorPrefix = 'editor';
 /* @expose */
 export async function getHtmlFields() {
   try {
-    const { html, css, js } = await get(editorPrefix);
+    const { html, css, js } = (await get(editorPrefix)) || initialData;
     return { html: html, css: css, js: js };
   } catch (err) {
     console.log('error on getHtmlFields backend', err);
