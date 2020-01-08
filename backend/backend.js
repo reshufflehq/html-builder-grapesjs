@@ -8,8 +8,7 @@ export const editorPrefix = 'editor';
 /* @expose */
 export async function getHtmlFields() {
   try {
-    const { html, css, js } = (await get(editorPrefix)) || initialData;
-    return { html: html, css: css, js: js };
+    return loadEditor();
   } catch (err) {
     console.log('error on getHtmlFields backend', err);
   }
@@ -55,5 +54,6 @@ export async function storeEditor(data) {
  */
 /* @expose */
 export async function loadEditor() {
-  await get(editorPrefix);
+  const data = (await get(editorPrefix)) || initialData;
+  return data;
 }

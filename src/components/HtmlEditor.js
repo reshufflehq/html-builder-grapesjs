@@ -27,9 +27,11 @@ export default function HtmlEditor() {
   }, []);
 
   const storageManagerRemote = {
-    id: '',
+    id: 'grapes',
     type: 'remote',
     stepsBeforeSave: 1,
+    autosave: true,
+    autoload: true,
     urlStore: './store',
     urlLoad: './load',
   };
